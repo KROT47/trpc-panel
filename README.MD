@@ -31,7 +31,7 @@ yarn add trpc-panel
 render your panel and return it from your backend (express example):
 
 ```js
-import { renderTrpcPanel } from "trpc-panel";
+import { renderTrpcPanel } from "@metamorph/trpc-panel";
 // ...
 app.use("/panel", (_, res) => {
   return res.send(
@@ -48,7 +48,7 @@ In Nextjs you'd want to create an api route somewhere like `src/pages/api/panel.
 
 ```ts
 import type { NextApiRequest, NextApiResponse } from "next";
-import { renderTrpcPanel } from "trpc-panel";
+import { renderTrpcPanel } from "@metamorph/trpc-panel";
 import { appRouter } from "../../server/api/root";
 
 export default async function handler(_: NextApiRequest, res: NextApiResponse) {
@@ -77,7 +77,7 @@ Documentation is opt-in, meaning you only need to set it up if you want to use i
 
 ```ts
 import { initTRPC } from "@trpc/server";
-import { TRPCPanelMeta } from "trpc-panel";
+import { TRPCPanelMeta } from "@metamorph/trpc-panel";
 
 const t = initTRPC.meta<TRPCPanelMeta>().create();
 ```
