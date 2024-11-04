@@ -18,7 +18,7 @@ function flatten(
   if (node.nodeType === "router") {
     const o = Object.values(node.children)
       .map(flatten)
-      .reduce((a, b) => [...a, ...b]);
+      .reduce((a, b) => [...a, ...b], []);
     return [...r, ...o, [node.path.join("."), colorSchemeType]];
   }
 
